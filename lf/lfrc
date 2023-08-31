@@ -1,0 +1,5 @@
+# https://pkg.go.dev/github.com/gokcehan/lf#hdr-Previewing_Files
+# Full Documentation
+# set previewer ~/.config/lf/scripts/scope
+set icons
+set drawbox
