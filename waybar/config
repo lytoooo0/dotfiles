@@ -8,12 +8,16 @@
     },
     "battery": {
         "format": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": ["", "", "", "", ""],
+        "hide": {
+            "when": "capacity > 80%",
+        }
     },
     "clock": {
         "format": " {:%F %a %R}"
     },
     "network": {
-    	"format-wifi": " {signalStrength}",
+    	"format-wifi": " {signalStrength}%",
+        "format-icons": [],
     }
 }
