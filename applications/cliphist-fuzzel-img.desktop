@@ -1,0 +1,9 @@
+dotfiles/applications/cliphist-fuzzel-img.desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Clipboard
+Exec=/home/ytong/dotfiles/bin/cliphist-fuzzel-img
+Icon=/home/ytong/dotfiles/applications/clipboard.png
+Terminal=false
+Categories=Utility;
