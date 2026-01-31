@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# For flickering bugs on sway for some apps
+# try add following line into /etc/environment
+# WLR_RENDER_NO_EXPLICIT_SYNC=1
+
 # Ensure necessary directories exist
 mkdir -p ~/.config ~/.local/bin ~/.local/share/applications
 
@@ -10,7 +14,7 @@ exec > >(tee -a "$LOG_FILE") 2>&1
 # Link configuration directories
 for dir in ~/dotfiles/*; do
     dir=$(basename "$dir")
-    if [[ "$dir" == "applications" || "$dir" == "bin" ]]; then
+    if [[ "$dir" == "applications" || "$dir" == "bin" || "$dir" == "systemd" ]]; then
         continue
     fi
     if [[ -L ~/.config/$dir ]]; then
