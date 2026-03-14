@@ -1,0 +1,9 @@
+dotfiles/applications/mxd.desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=maple
+Exec=/home/ytong/dotfiles/bin/mxd
+Icon=/home/ytong/dotfiles/applications/maplestory.png
+Terminal=false
+Categories=Game;

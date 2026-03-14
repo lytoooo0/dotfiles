@@ -1,0 +1,6 @@
+#!/bin/bash
+
+cd ~/software/mxd/BeiDou-Client-V16/
+
+swaymsg 'workspace new'
+LANG=zh_CN.UTF-8 wine ~/software/mxd/BeiDou-Client-V16/BeiDou.exe
