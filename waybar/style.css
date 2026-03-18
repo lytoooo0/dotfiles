@@ -95,9 +95,11 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 16px;
+    padding: 0 10px;
     color: #ffffff;
 }
+
+
 
 #window,
 #workspaces {
@@ -326,3 +328,12 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#custom-vpn.vpn-connected {
+    color: #4CAF50;
+}
+
+#custom-vpn.vpn-disconnected {
+    color: #f44336;
+}
+

@@ -2,22 +2,28 @@
     "layer": "top",
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["network", "battery", "clock"],
+    "modules-right": ["custom/vpn", "network", "battery", "clock"],
     "sway/window": {
         "max-length": 50
     },
     "battery": {
-        "format": "{icon} {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "hide": {
-            "when": "capacity > 80%",
-        }
+        "format": "{icon}  ",
+        "format-icons": ["", "", "", "", ""]
     },
     "clock": {
         "format": " {:%F %a %R}"
     },
     "network": {
-    	"format-wifi": " {signalStrength}%",
-        "format-icons": [],
+    	"format-wifi": "{icon}  ",
+        "format-icons": ["󰤟", "󰤢", "󰤥", "󰤨"],
+    },
+    "custom/vpn": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/vpn-toggle.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "nmcli connection up 'company'",
+        "on-right-click": "nmcli cnnection down 'company'"
+
     }
 }
