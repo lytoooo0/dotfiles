@@ -245,3 +245,5 @@ bar {
 default_border pixel 5
 
 exec wl-paste --watch cliphist store
+exec mako
+
