@@ -1,0 +1,9 @@
+dotfiles/applications/mxd.desktop
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=vpn
+Exec=/home/ytong/dotfiles/bin/select_vpn
+Icon=network-vpn
+Terminal=true
+Categories=Utility;Network;

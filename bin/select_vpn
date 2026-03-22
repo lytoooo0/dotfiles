@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Get list of VPN connections
+VPNS=$(nmcli connection show | grep "vpn" | awk '{print $1}')
+
+if [ -z "$VPNS" ]; then
+    echo "No VPN connections found"
+    exit 1
+fi
+
+# Create a list with status
+VPN_LIST=""
+while IFS= read -r vpn; do
+    # Check if VPN is active
+    if nmcli connection show --active | grep -q "^$vpn"; then
+        status="ON"
+    else
+        status="OFF"
+    fi
+    VPN_LIST+="$vpn - $status"$'\n'
+done <<< "$VPNS"
+
+# Use fuzzel to select
+SELECTED=$(echo -e "$VPN_LIST" | fuzzel -d)
+
+if [ -z "$SELECTED" ]; then
+    exit 0
+fi
+
+# Extract VPN name (everything before the dash)
+VPN_NAME=$(echo "$SELECTED" | awk '{print $1}')
+
+# Toggle: if active, turn off; if inactive, turn on
+if nmcli connection show --active | grep -q "^$VPN_NAME"; then
+    nmcli connection down "$VPN_NAME"
+else
+    nmcli connection up "$VPN_NAME"
+fi
+
