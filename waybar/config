@@ -21,9 +21,7 @@
         "format": "{}",
         "exec": "~/.config/waybar/scripts/vpn-toggle.sh",
         "return-type": "json",
-        "interval": 5,
+        "interval": 1,
         "on-click": "nmcli connection up 'company'",
-        "on-right-click": "nmcli cnnection down 'company'"
-
     }
 }
