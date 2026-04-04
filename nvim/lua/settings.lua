@@ -5,6 +5,7 @@ vim.opt.tabstop = 4
 vim.opt.number = true
 vim.opt.relativenumber = true
 
-vim.opt.completeopt = noselect
+vim.opt.clipboard = 'unnamedplus'
+vim.opt.completeopt = {'noselect', 'preview', 'menuone'}
 
 vim.keymap.set('i', 'jk', '<Esc>', { noremap = true, silent = true })
