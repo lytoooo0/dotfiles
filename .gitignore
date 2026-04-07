@@ -1,2 +1,3 @@
 # Ignore log files
 *.log
+nvim-pack-lock.json
